@@ -1,7 +1,7 @@
 # !/usr/bin/python
 # -*- coding:utf-8 -*-
 # time: 2019/07/02--08:12
-__author__ = 'Henry'
+__author__ = 'Henryzhhigh'
 
 '''
 项目: B站视频下载 - 多线程下载
