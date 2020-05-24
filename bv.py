@@ -306,13 +306,15 @@ if __name__ == '__main__':
     print(startnum,endnum)
     #if (startnum ==0):
 
-    for startnum in range(endnum):
+    for i in range(endnum):
         if startnum == 0:
-            startnum = startnum +1
-        url_link = start+'?p='+str(startnum)
+            i = i +1
+        else:
+            i = startnum
+        url_link = start+'?p='+str(i)
         print(url_link)
         #batch_download(url_link)
-        startnum = startnum + 1
+        i = i+ 1
         #print(url_link)
 
 
