@@ -148,7 +148,7 @@ def format_size(bytes):
 def down_video(video_list, title, start_url, page):
     S.acquire()
     num = 1
-    currentVideoPath = os.path.join(sys.path[0], 'bilibili_video', title)  # 当前目录作为下载目录
+    currentVideoPath = os.path.join(sys.path[0], 'my_video', title)  # 当前目录作为下载目录
     if not os.path.exists(currentVideoPath):
         os.makedirs(currentVideoPath)
     for i in video_list:
@@ -185,7 +185,7 @@ def down_video(video_list, title, start_url, page):
 
 # 合并视频(20190802新版)
 def combine_video(title_list):
-    video_path = os.path.join(sys.path[0], 'bilibili_video')  # 下载目录
+    video_path = os.path.join(sys.path[0], 'my_video')  # 下载目录
     for title in title_list:
         current_video_path = os.path.join(video_path, title)
         if len(os.listdir(current_video_path)) >= 2:
@@ -241,7 +241,8 @@ def batch_download(url_link):
     # <accept_format><![CDATA[flv,flv720,flv480,flv360]]></accept_format>
     # <accept_description><![CDATA[高清 1080P,高清 720P,清晰 480P,流畅 360P]]></accept_description>
     # <accept_quality><![CDATA[80,64,32,16]]></accept_quality>
-    quality = input('请输入您要下载视频的清晰度(1080p:80;720p:64;480p:32;360p:16)(填写80或64或32或16):')
+    #quality = input('请输入您要下载视频的清晰度(1080p:80;720p:64;480p:32;360p:16)(填写80或64或32或16):')
+    quality = 80
     # 获取视频的cid,title
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
@@ -293,7 +294,7 @@ def batch_download(url_link):
     end_time = time.time()  # 结束时间
     print('下载总耗时%.2f秒,约%.2f分钟' % (end_time - start_time, int(end_time - start_time) / 60))
     # 如果是windows系统，下载完成后打开下载目录
-    currentVideoPath = os.path.join(sys.path[0], 'bilibili_video')  # 当前目录作为下载目录
+    currentVideoPath = os.path.join(sys.path[0], 'my_video')  # 当前目录作为下载目录
     if (sys.platform.startswith('win')):
         os.startfile(currentVideoPath)
 
