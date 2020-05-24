@@ -300,15 +300,19 @@ def batch_download(url_link):
 
 if __name__ == '__main__':
     start=input('please input the bv link:')
-    num = int(input('please input the num:'))
+    startnum = int(input('please input start num:'))
+    endnum   = int(input('please input end num:'))
     url_link = ''
+    #if (startnum ==0):
 
-    for i in range(num):
-        i = i + 1
-        url_link = start+'?p='+str(i)
-        batch_download(url_link)
+    for startnum in range(endnum):
+        if startnum == 0:
+            startnum = startnum +1
+        url_link = start+'?p='+str(startnum)
+        print(url_link)
+        #batch_download(url_link)
+        startnum = startnum + 1
         #print(url_link)
-
 
 
 
