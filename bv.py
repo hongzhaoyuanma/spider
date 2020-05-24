@@ -228,8 +228,16 @@ def batch_download(url_link):
     else:
         # https://www.bilibili.com/video/av46958874/?spm_id_from=333.334.b_63686965665f7265636f6d6d656e64.16
         start_url = 'https://api.bilibili.com/x/web-interface/view?aid=' + re.search(r'/av(\d+)/*', start).group(1)
+        bv_str = re.search(r'/(BV.*)\?/*', start).group(1)  # added
+        #print("bv_str", bv_str)
+        id = bv_to_av(bv_str)  # added
+        # print("av",av)
+        # id  =re.search(r'av(\d+)/*', av).group(1) #added
+        # id  =re.search(r'av(\d+)/*', av) #added
+        # start_url = 'https://api.bilibili.com/x/web-interface/view?aid=' + re.search(r'/av(\d+)/*', start).group(1)
+        start_url = 'https://api.bilibili.com/x/web-interface/view?aid=' + id
 
-    # 视频质量
+# 视频质量
     # <accept_format><![CDATA[flv,flv720,flv480,flv360]]></accept_format>
     # <accept_description><![CDATA[高清 1080P,高清 720P,清晰 480P,流畅 360P]]></accept_description>
     # <accept_quality><![CDATA[80,64,32,16]]></accept_quality>
