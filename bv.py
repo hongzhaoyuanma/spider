@@ -227,7 +227,7 @@ def batch_download(url_link):
         start_url = 'https://api.bilibili.com/x/web-interface/view?aid=' + start
     else:
         # https://www.bilibili.com/video/av46958874/?spm_id_from=333.334.b_63686965665f7265636f6d6d656e64.16
-        start_url = 'https://api.bilibili.com/x/web-interface/view?aid=' + re.search(r'/av(\d+)/*', start).group(1)
+        #start_url = 'https://api.bilibili.com/x/web-interface/view?aid=' + re.search(r'/av(\d+)/*', start).group(1)
         bv_str = re.search(r'/(BV.*)\?/*', start).group(1)  # added
         #print("bv_str", bv_str)
         id = bv_to_av(bv_str)  # added
