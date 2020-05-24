@@ -297,8 +297,10 @@ if __name__ == '__main__':
     for i in range(num):
         i = i + 1
         url_link = start+'?p='+str(i)
-        print(url_link)
-        #
+        batch_download(url_link)
+        #print(url_link)
+
+
 
 
 # 分P视频下载测试: https://www.bilibili.com/video/av19516333/
