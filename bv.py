@@ -303,6 +303,7 @@ if __name__ == '__main__':
     startnum = int(input('please input start num:'))
     endnum   = int(input('please input end num:'))
     url_link = ''
+    print(startnum,endnum)
     #if (startnum ==0):
 
     for startnum in range(endnum):
