@@ -314,7 +314,7 @@ if __name__ == '__main__':
         url_link = start+'?p='+str(i)
         print(url_link)
         #batch_download(url_link)
-        i = i+ 1
+        #i = i+ 1
         #print(url_link)
 
 
